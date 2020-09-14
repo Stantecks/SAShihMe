@@ -1,7 +1,7 @@
 # SAShihMe
 
 - [ ] Genbank and ab1 file importing.
-	- [ ] Should it be a zipped file of ab1 files and one genbank?
+	- [ ] Should it be a zipped file of ab1 files and one genbank? ---> only problem is starting with zip will give all files, primarily we are aligning two files
 	- [ ] How should the filenames work?
 
 - [ ] Quality control
@@ -15,4 +15,4 @@
 
 - [ ] Outputs (should be done last)
 	- [ ] Generate a nice print statement that takes data from above and generates a feature specific report and a global report.
-	- [ ] Experiment with different report styles.
+	- [ ] Experiment with different report styles. --> What do you think about printing a graph of seq traces for where the 'mismatch'/'gap' is? I know it is possible to get that data 
