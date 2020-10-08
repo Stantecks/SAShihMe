@@ -1,8 +1,9 @@
 # SAShihMe
 
 - [ ] Genbank and ab1 file importing.
-	- [ ] Should it be a zipped file of ab1 files and one genbank? ---> only problem is starting with zip will give all files, primarily we are aligning two files
-	- [ ] How should the filenames work?
+	- [x] Should it be a zipped file of ab1 files and one genbank?
+        - Should give option to do singular alignments but also batch from zipped files
+	- [ ] How should the filenames work? If multiple templates are involved in a zip of ab1 files.
 
 - [ ] Quality control
 	- [ ] Find a good inital cutoff number for sequencing reaction (might have to look at sequencing files)  Though we should be conservative (less things cut off)
