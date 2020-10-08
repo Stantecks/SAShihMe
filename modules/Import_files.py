@@ -1,15 +1,39 @@
 # Importing tools 
 
 from zipfile import ZipFile
+from Bio import SeqIO
 
 # For opening zip file for seq traces 
-with ZipFile('Traces.zip','r') as seqtraces:
-	seqtraces.extractall()
-	listoffilenames = seqtraces.namelist()
-  
-# can continue down this route if we elect to unzip files. Next step would be to choose which file(s) we want to align with 'templateseq' and filter for it
-
+def process_zip(my_zip):
+	with ZipFile(my_zip,'r') as seqtraces:
+		seqtraces.extractall()
+		l_filenames = seqtraces.namelist()
+	return l_filenames
 
 # Opening sequence and genebank file by calling name, can change the names to match input file name
-templateseq = SeqIO.read('pIO2_copy.gb','genbank' )
-expseq = SeqIO.read('pIO2.1-RB_Check2.ab1','abi')
+# templateseq = SeqIO.read('pIO2_copy.gb','genbank' )
+
+def seq_gen(my_fnames):
+	for f in my_fnames:
+		trace = SeqIO.read(f, 'abi')
+		yield trace
+
+
+###### Example usage:
+my_filenames = process_zip('/home/stanarch/projects/SAShihMe/tests/test_zip_from_genewiz.zip')
+my_seq_gen = seq_gen(my_filenames)
+# Can iterate through generator once
+for seq in my_seq_gen:
+    print(seq.name, "\n", str(seq.seq.reverse_complement())[10:30], "\n")
+
+# Ways to store generator result in memory:
+# First re-init generator
+my_seq_gen = seq_gen(my_filenames)
+# store in variable using next()
+first_seq = next(my_seq_gen)
+second_seq = next(my_seq_gen)
+
+# or store everything in list
+my_seq_gen = seq_gen(my_filenames)
+my_seq_list = list(my_seq_gen)
+print(my_seq_list)
