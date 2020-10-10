@@ -2,4 +2,4 @@
 __pycache__/
 .pytest_cache/
 .empty/
-*.ab1
+**.ab1
