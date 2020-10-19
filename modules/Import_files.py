@@ -18,6 +18,9 @@ def seq_gen(my_fnames):
 		trace = SeqIO.read(f, 'abi')
 		yield trace
 
+def import_template(template):
+	template_seq = SeqIO.read('pIO2_copy')
+
 
 ###### Example usage:
 my_filenames = process_zip('/home/stanarch/projects/SAShihMe/tests/test_zip_from_genewiz.zip')
