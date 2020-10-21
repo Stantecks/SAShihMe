@@ -11,7 +11,6 @@ my_filenames = process_zip('/Users/izaiahornelas/Desktop/GitHub/SAShihME/SAShihM
 my_gen = seq_gen(my_filenames)
 first_seq = next(my_gen)
 firstseq = first_seq.seq
-print(firstseq)
 
 # my_seq_list = list(my_gen) #turning into list
 # trimmed_seq = [len(seq_trim(10, my_obj.seq)) for my_obj in my_seq_list] # trimming seq 
