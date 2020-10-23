@@ -18,9 +18,14 @@ def seq_gen(my_fnames):
 		trace = SeqIO.read(f, 'abi')
 		yield trace
 
+def template_seq(filename, filetype):
+	template = SeqIO.read(filename,filetype)
+	templateseq = template.seq
+	return templateseq
+
 
 ###### Example usage:
-my_filenames = process_zip('/home/stanarch/projects/SAShihMe/tests/test_zip_from_genewiz.zip')
+my_filenames = process_zip('/Users/izaiahornelas/Desktop/GitHub/SAShihME/SAShihMe/tests/test_zip_from_genewiz.zip')
 my_seq_gen = seq_gen(my_filenames)
 # Can iterate through generator once
 for seq in my_seq_gen:
