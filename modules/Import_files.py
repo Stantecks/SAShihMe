@@ -24,21 +24,21 @@ def template_seq(filename, filetype):
 	return templateseq
 
 
-###### Example usage:
-my_filenames = process_zip('/Users/izaiahornelas/Desktop/GitHub/SAShihME/SAShihMe/tests/test_zip_from_genewiz.zip')
-my_seq_gen = seq_gen(my_filenames)
-# Can iterate through generator once
-for seq in my_seq_gen:
-    print(seq.name, "\n", str(seq.seq.reverse_complement())[10:30], "\n")
+# ###### Example usage:
+# my_filenames = process_zip('/Users/izaiahornelas/Desktop/GitHub/SAShihME/SAShihMe/tests/test_zip_from_genewiz.zip')
+# my_seq_gen = seq_gen(my_filenames)
+# # Can iterate through generator once
+# for seq in my_seq_gen:
+#     print(seq.name, "\n", str(seq.seq.reverse_complement())[10:30], "\n")
 
-# Ways to store generator result in memory:
-# First re-init generator
-my_seq_gen = seq_gen(my_filenames)
-# store in variable using next()
-first_seq = next(my_seq_gen)
-second_seq = next(my_seq_gen)
+# # Ways to store generator result in memory:
+# # First re-init generator
+# my_seq_gen = seq_gen(my_filenames)
+# # store in variable using next()
+# first_seq = next(my_seq_gen)
+# second_seq = next(my_seq_gen)
 
-# or store everything in list
-my_seq_gen = seq_gen(my_filenames)
-my_seq_list = list(my_seq_gen)
-print(my_seq_list)
+# # or store everything in list
+# my_seq_gen = seq_gen(my_filenames)
+# my_seq_list = list(my_seq_gen)
+# print(my_seq_list)
